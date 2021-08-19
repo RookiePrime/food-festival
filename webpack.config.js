@@ -9,8 +9,8 @@ module.exports = {
         tickets: './assets/js/tickets.js'
     },
     output: {
+        filename: '[name].bundle.js',
         path: __dirname + '/dist',
-        filename: '[name].bundle.js'
     },
     module: {
         rules: [
@@ -35,6 +35,11 @@ module.exports = {
                 ]
             }
         ]
+    },
+    devServer: {
+        static: {
+            directory: __dirname
+        }
     },
     plugins: [
         new webpack.ProvidePlugin({
